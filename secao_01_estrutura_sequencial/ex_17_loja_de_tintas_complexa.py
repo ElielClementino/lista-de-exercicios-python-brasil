@@ -46,7 +46,7 @@ def calcular_latas_e_preco_de_tinta():
     valor_com_apenas_galoes = numero_de_galoes * 25
     print(f"Você deverá usar {numero_de_galoes} galões de 3.6 litros, no valor de R$ {valor_com_apenas_galoes}")
 
-    numero_de_latas = math.floot(litros_a_serem_usados / litros_por_galao)
+    numero_de_latas = math.floor(litros_a_serem_usados / litros_por_galao)
     valor_de_latas = numero_de_latas * 80
     litros_faltantes = litros_a_serem_usados % litros_por_lata
     numero_de_galoes = math.ceil(litros_faltantes / litros_por_galao)
