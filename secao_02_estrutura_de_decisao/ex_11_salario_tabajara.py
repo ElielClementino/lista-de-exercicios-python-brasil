@@ -12,7 +12,7 @@ Faça um programa que recebe o salário de um colaborador e o reajuste segundo o
   o percentual de aumento aplicado;
   o valor do aumento;
   o novo salário, após o aumento.
-
+S
 Mostrar valores monetários com duas casas decimais.
 
     >>> calcular_aumento(100)
@@ -41,25 +41,24 @@ Mostrar valores monetários com duas casas decimais.
 
 def calcular_aumento(salario: float):
     """Escreva aqui em baixo a sua solução"""
-    salario
-    nome = ""
-    aumento = 0.00
-    if salario <= 280.00:
-        nome = "20"
+    aumento = None
+    nome = None
+    if salario < 280.00:
         aumento = 0.20
-    elif 280.00 > salario < 700.00:
-        nome = "15"
+        nome = "20%"
+    elif 280.00 < salario < 700.00:
         aumento = 0.15
-    elif 700.00 > salario < 1500.00:
-        nome = "10"
+        nome = "15%"
+    elif 700.000 < salario < 1500.00:
         aumento = 0.10
+        nome = "10%"
     elif salario > 1500.00:
-        nome = "5"
-        aumento = 0.5
-    percentual_de_aumento = salario * aumento
-    salario_final = salario + percentual_de_aumento
-    quantidade_aumentada = salario_final - salario
+        aumento = 0.05
+        nome = "5%"
+
+    aumento_salario = salario * aumento
+    salario_final = salario + aumento_salario
     print(f"Salário atual: R$ {salario:.2f}")
-    print(f"Aumento porcentual: {nome}%")
-    print(f"Valor do aumento: R$ {quantidade_aumentada:.2f}")
+    print(f"Aumento porcentual: {nome}")
+    print(f"Valor do aumento: R$ {aumento_salario:.2f}")
     print(f"Novo salário: R$ {salario_final:.2f}")
