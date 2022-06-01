@@ -29,4 +29,4 @@ def calcular_latas_e_preco_de_tinta():
     lata_litros = 18
     latas_necessarias = math.ceil(litros_necessarios / lata_litros)
     custo = latas_necessarias * valor_tinta_18l
-    print("Você deve comprar {} lata(s) tinta ao custo de R$ {}".format(latas_necessarias, custo))
+    print(f"Você deve comprar {latas_necessarias} lata(s) tinta ao custo de R$ {custo:.2f}")
