@@ -31,27 +31,22 @@ Acrescente 10% de folga e sempre arredonde os valores para cima, isto é, consid
 def calcular_latas_e_preco_de_tinta():
     """Escreva aqui em baixo a sua solução"""
     import math
-
-    area_a_ser_pintada = float(input("Digite a área a ser pintada"))
-    area_com_folga = area_a_ser_pintada * 0.1
-    litros_por_metro = 6
-    litros_a_serem_usados = area_com_folga / litros_por_metro
-    litros_por_lata = 18
-    numero_de_latas = math.ceil(litros_a_serem_usados / litros_por_lata)
-    valor_com_apenas_latas = numero_de_latas * 80
-    print(f"Você deverá usar {numero_de_latas} latas de 18 litros, no valor de R$ {valor_com_apenas_latas}")
-
-    litros_por_galao = 3.6
-    numero_de_galoes = math.ceil(litros_a_serem_usados / litros_por_galao)
-    valor_com_apenas_galoes = numero_de_galoes * 25
-    print(f"Você deverá usar {numero_de_galoes} galões de 3.6 litros, no valor de R$ {valor_com_apenas_galoes}")
-
-    numero_de_latas = math.floor(litros_a_serem_usados / litros_por_galao)
-    valor_de_latas = numero_de_latas * 80
-    litros_faltantes = litros_a_serem_usados % litros_por_lata
-    numero_de_galoes = math.ceil(litros_faltantes / litros_por_galao)
-    valor_com_galoes = numero_de_galoes * 25
-
-    valor_total = valor_de_latas + valor_com_galoes
-    print(f"Você dever'usar {numero_de_latas} latas de 18 litros mais {numero_de_galoes} galões de 3.6 litros, "
-          f"no valor de R$ {valor_total}")
+    area_a_ser_pintada = float(input("Insira a área em metros quadrados a ser pintada: "))
+    tinta_necessaria = math.ceil((area_a_ser_pintada / 6) * 1.1)
+    latas_necessarias = math.ceil(tinta_necessaria / 18)
+    preco_latas = latas_necessarias * 80
+    galoes_necessarios = math.ceil(tinta_necessaria / 3.6)
+    preco_galoes = galoes_necessarios * 25
+    tinta_restante_latas = (latas_necessarias * 18) - tinta_necessaria
+    tinta_restante_galoes = (galoes_necessarios * 3.6) - tinta_necessaria
+    latas_necessarias_economico = tinta_necessaria // 18
+    galoes_necessarios_economico = math.ceil((tinta_necessaria % 18) / 3.6)
+    preco_economico = (latas_necessarias_economico * 80) + (galoes_necessarios_economico * 25)
+    restante_economico = (latas_necessarias_economico * 18) + (galoes_necessarios_economico * 3.6) - tinta_necessaria
+    print(f"Você deve comprar {tinta_necessaria:.0f} litros de tinta.")
+    print(
+        f"Você pode comprar {latas_necessarias} lata(s) de 18 litros a um custo de R$ {preco_latas:.0f}. Vão sobrar {tinta_restante_latas:.1f} litro(s) de tinta.")
+    print(
+        f"Você pode comprar {galoes_necessarios:} lata(s) de 3.6 litros a um custo de R$ {preco_galoes:.0f}. Vão sobrar {tinta_restante_galoes:.1f} litro(s) de tinta.")
+    print(
+        f"Para menor custo, você pode comprar {latas_necessarias_economico:.0f} lata(s) de 18 litros e {galoes_necessarios_economico} galão(ões) de 3.6 litros a um custo de R$ {preco_economico:.0f}. Vão sobrar {restante_economico:.1f} litro(s) de tinta.")
