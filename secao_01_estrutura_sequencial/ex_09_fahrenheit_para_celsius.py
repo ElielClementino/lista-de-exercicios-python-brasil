@@ -19,3 +19,7 @@ Mostrar apenas valor inteiro da temperatura
 
 def transformar_para_celsius():
     """Escreva aqui em baixo a sua solução"""
+    import math
+    fahreheit = int(input("Digite a temperatura em fahreheit que você quer calcular: "))
+    celsius = math.ceil(5 * (fahreheit - 32)) / 9
+    print(f"Essa temperatura é de {celsius:.0f} Celsius")

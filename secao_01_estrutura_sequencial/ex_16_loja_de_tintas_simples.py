@@ -21,3 +21,11 @@ Considere que a cobertura da tinta é de 1 litro para cada 3 metros quadrados e 
 
 def calcular_latas_e_preco_de_tinta():
     """Escreva aqui em baixo a sua solução"""
+    area = float(input("Digite o tamanho da área em metros quadrados a ser pintada: "))
+    lata_valor = 80.00
+    cobertura_l = 3
+    litros = area / cobertura_l
+    lata_litros = 18
+    latass = int(litros / lata_litros)
+    valor_total = latass * lata_valor
+    print(f"Você deve comprar {latass} lata(s) tinta ao custo de R$ {valor_total:.2f}")
