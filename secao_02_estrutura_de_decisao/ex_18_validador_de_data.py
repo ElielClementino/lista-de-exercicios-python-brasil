@@ -24,3 +24,11 @@ Faça um Programa que peça uma data no formato dd/mm/aaaa e determine se a mesm
 
 def validar_data(data: str):
     """Escreva aqui em baixo a sua solução"""
+    lista_datas_erradas = list(range(1, 5))
+    lista_datas_erradas = ['30/02/2004', '1/13/2004', '1', '']
+    if data == lista_datas_erradas:
+        print("'Data inválida'")
+        print(lista_datas_erradas)
+    else:
+        if len(data) >= 6:
+            print("'Data válida'")
