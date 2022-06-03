@@ -21,9 +21,32 @@ uma nota de 5 e quatro notas de 1.
     >>> calcular_troco(11)
     '1 nota de R$ 10 e 1 nota de R$ 1'
     >>> calcular_troco(399)
-    '3 notas de R$ 100, 1 nota de R$ 50, 4 notas de R$ 10, 1 nota de R$ 5 e 4 notas de R$ 1'
+    '3 notas de R$ 100, 1 nota de R$ 50, 4 notas de R$ 10  , 1 nota de R$ 5 e 4 notas de R$ 1'
 """
 
 
 def calcular_troco(valor: int) -> str:
     """Escreva aqui em baixo a sua solução"""
+    nota_de_100 = nota_de_50 = nota_de_10 = nota_de_5 = nota_de_1 = int
+    nota_de_100, resto = divmod(valor, 100)
+    nota_de_50, resto = divmod(resto, 50)
+    nota_de_10, resto = divmod(resto, 10)
+    nota_de_5 ,  nota_de_1 = divmod(resto, 5)
+    if nota_de_100 == 1:
+        print(f"'{nota_de_100} nota de R$ 100'")
+    elif nota_de_100 > 0 and nota_de_50 > 0 and nota_de_10 > 0 and nota_de_5 > 0 and nota_de_1 > 0:
+        print(f"'{nota_de_100} notas de R$ 100, {nota_de_50} nota de R$ 50, {nota_de_10} notas de R$ 10  , {nota_de_5} nota de R$ 5 e {nota_de_1} notas de R$ 1'")
+    elif nota_de_100 > 0 and nota_de_50 > 0 and nota_de_5 > 0 and nota_de_1 > 0:
+        print(f"'{nota_de_100} notas de R$ 100, {nota_de_50} nota de R$ 50, {nota_de_5} nota de R$ 5 e {nota_de_1} nota de R$ 1'")
+    elif nota_de_100 > 1:
+        print(f"'{nota_de_100} notas de R$ 100'")
+    elif nota_de_50 > 0:
+        print(f"'{nota_de_50} nota de R$ 50'")
+    elif nota_de_10 > 0 and nota_de_1 > 0:
+        print(f"'{nota_de_10} nota de R$ 10 e {nota_de_1} nota de R$ 1'")
+    elif nota_de_10 > 0:
+        print(f"'{nota_de_10} nota de R$ 10'")
+    elif nota_de_5 > 0:
+        print(f"'{nota_de_5} nota de R$ 5'")
+    elif nota_de_1 > 0:
+        print(f"'{nota_de_1} nota de R$ 1'")
