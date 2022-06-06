@@ -23,15 +23,19 @@ def calcular_ano_ultrapassagem_populacional(
         populacao_menor: int, taxa_crescimento_populacao_menor: float, populacao_maior,
         taxa_crescimento_populacao_maior:float ) -> str:
     """Escreva aqui em baixo a sua solução"""
+    pop_inicial_a = populacao_menor
+    pop_inicial_b = populacao_maior
     anos = 0
-    if taxa_crescimento_populacao_menor < taxa_crescimento_populacao_maior:
-        print("'A taxa de crescimento do país B (4.0%) deve ser menor do que a do país A (3.0%)'")
-    elif populacao_menor > populacao_maior:
+    if populacao_menor < populacao_maior:
+        while populacao_menor < populacao_maior:
+            anos += 1
+            populacao_menor = pop_inicial_a * (taxa_crescimento_populacao_menor ** anos)
+            populacao_maior = pop_inicial_b * (taxa_crescimento_populacao_maior ** anos)
+            populacao_menor = int(populacao_menor)
+            populacao_maior = int(populacao_maior)
+
         print(f"'População de A, depois de {anos} ano(s) será de {populacao_menor} pessoas, superando a de B, que será de {populacao_maior} pessoas'")
     else:
-        if taxa_crescimento_populacao_menor > taxa_crescimento_populacao_maior:
-            while populacao_menor < populacao_maior:
-                populacao_menor *= taxa_crescimento_populacao_menor
-                populacao_maior *= taxa_crescimento_populacao_maior
-                anos += 1
-            print(f"'População de A, depois de {anos} ano(s) será de {populacao_menor} pessoas, superando a de B, que será de {populacao_maior} pessoas'")
+        if populacao_menor > populacao_maior:
+            print("'A taxa de crescimento do país B (4.0%) deve ser menor do que a do país A (3.0%)'")
+
