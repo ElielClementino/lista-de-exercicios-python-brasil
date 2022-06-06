@@ -25,3 +25,8 @@ n−ésimo termo.
 
 def calcular_serie_de_fibonacci(n: int) -> str:
     """Escreva aqui em baixo a sua solução"""
+    i = 0
+    while i < n:
+        sequencia = n * i
+        print(f"'{n}'")
+        i += 1

@@ -16,3 +16,13 @@ Faça um programa que receba dois números inteiros e gere os números inteiros 
 
 def calcular_numeros_no_intervalo(inicio: int, fim: int) -> str:
     """Escreva aqui em baixo a sua solução"""
+    n = 0
+    lista = [inicio, fim]
+    lista_max = max(lista)
+    lista_min = min(lista)
+    while n <= 10:
+        d = 0 + n
+        intervalo = lista_max - (lista_min + d)
+        novo_intervalo = intervalo
+        print(novo_intervalo)
+        n += 1
