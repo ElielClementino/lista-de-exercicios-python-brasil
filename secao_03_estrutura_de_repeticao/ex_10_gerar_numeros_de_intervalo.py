@@ -24,5 +24,5 @@ def calcular_numeros_no_intervalo(inicio: int, fim: int) -> str:
         d = 0 + n
         intervalo = lista_max - (lista_min + d)
         novo_intervalo = intervalo
-        print(novo_intervalo)
+        print(f"'{novo_intervalo}'",end="")
         n += 1

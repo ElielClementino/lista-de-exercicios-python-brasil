@@ -18,3 +18,12 @@ Também mostre a soma dos números da sequência.
 
 def calcular_numeros_no_intervalo_e_somar(inicio: int, fim: int) -> str:
     """Escreva aqui em baixo a sua solução"""
+    cont = 0
+    lista = list(range(1, 10))
+    while cont < 10:
+        cont += 1
+        if inicio < fim:
+            lista[cont].append(+1)
+        elif inicio > fim:
+            lista[cont].append(-1)
+    print(f"Sequência: {lista}")
