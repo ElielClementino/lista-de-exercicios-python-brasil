@@ -41,7 +41,10 @@ Faça um programa que leia e valide as seguintes informações:
 def cadastrar_usuario(nome: str, idade: int, salario: float, sexo: str, estado_civil: str):
     """Escreva aqui em baixo a sua solução"""
     while True:
-        if len(nome) < 3:
+        if len(nome) < 3 and 0 >= idade > 150:
+            print(f"Erro: o nome precisa ter 3 letras ou mais, não pode ser {nome}")
+            print(f"Erro: a idade precisa estar entre 0 e 150, não pode ser {idade}")
+        elif len(nome) < 3:
             print(f"Erro: o nome precisa ter 3 letras ou mais, não pode ser {nome}")
         elif idade > 150:
             print(f"Erro: a idade precisa estar entre 0 e 150, não pode ser {idade}")
