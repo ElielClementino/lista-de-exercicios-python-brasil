@@ -38,5 +38,6 @@ def obter_numero_valido():
         numero = int(input("Digite um número de 0 a 10"))
         if 1 <= numero <= 10:
             print(numero)
+            break
         else:
             print(f"Númro inválido: {numero}")

@@ -28,3 +28,4 @@ def validar_senha():
             print("Senha deve ser diferente do login")
         elif login != senha:
             print(f"'Cadastro realizado com suceso, seu login é {login}'")
+            break
