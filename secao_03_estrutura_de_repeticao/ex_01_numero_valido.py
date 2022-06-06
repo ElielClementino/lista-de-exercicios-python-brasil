@@ -51,4 +51,4 @@ def obter_numero_valido():
     #         print(numero)
     #         break
     #     else:
-    #         print(f"Númro inválido: {numero}")
+    #         print(f"Número inválido: {numero}")
