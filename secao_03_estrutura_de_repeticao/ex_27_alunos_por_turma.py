@@ -46,7 +46,7 @@ def calcular_media_de_alunos_por_turma():
     else:
         while cont < n_turmas:
             cont += 1
-            alunos_turma += n_alunos
+            alunos_turma *= n_alunos
         media = math.floor(alunos_turma / n_turmas)
         print(f"Número de turmas: {n_turmas}")
         print(f"Média de alunos por turma: {media}")
