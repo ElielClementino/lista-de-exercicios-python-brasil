@@ -40,20 +40,43 @@ Faça um programa que leia e valide as seguintes informações:
 
 def cadastrar_usuario(nome: str, idade: int, salario: float, sexo: str, estado_civil: str):
     """Escreva aqui em baixo a sua solução"""
+    cont = 0
     while True:
-        if len(nome) < 3 and 0 >= idade > 150:
-            print(f"Erro: o nome precisa ter 3 letras ou mais, não pode ser {nome}")
-            print(f"Erro: a idade precisa estar entre 0 e 150, não pode ser {idade}")
-        elif len(nome) < 3:
-            print(f"Erro: o nome precisa ter 3 letras ou mais, não pode ser {nome}")
-        elif idade > 150:
-            print(f"Erro: a idade precisa estar entre 0 e 150, não pode ser {idade}")
+        if len(nome) < 3:
+            cont += 1
+        elif len(nome) < 3 and idade > 150:
+            cont += 2
         elif salario <= 0:
-            print(f"Erro: o salário precisa ser positivo, não pode ser {salario}")
+            cont += 1
         elif "m" != sexo != "f":
-            print(f'Erro: o sexo precisa ser "m" ou "f", não pode ser "{sexo}"')
+            cont += 1
         elif estado_civil not in estado_civil:
+            cont += 1
+        if cont == 1:
+            print(f"Erro: o nome precisa ter 3 letras ou mais, não pode ser {nome}")
+            break
+        elif cont == 2:
+            print(f"Erro: o nome precisa ter 3 letras ou mais, não pode ser {nome}")
+            print(f"Erro: a idade precisa estar entre 0 e 150, não pode ser {idade}")
+            break
+        elif cont == 3:
+            print(f"Erro: o nome precisa ter 3 letras ou mais, não pode ser {nome}")
+            print(f"Erro: a idade precisa estar entre 0 e 150, não pode ser {idade}")
+            print(f"Erro: o salário precisa ser positivo, não pode ser {salario}")
+            break
+        elif cont == 4:
+            print(f"Erro: o nome precisa ter 3 letras ou mais, não pode ser {nome}")
+            print(f"Erro: a idade precisa estar entre 0 e 150, não pode ser {idade}")
+            print(f"Erro: o salário precisa ser positivo, não pode ser {salario}")
+            print(f'Erro: o sexo precisa ser "m" ou "f", não pode ser "{sexo}"')
+            break
+        elif cont == 5:
+            print(f"Erro: o nome precisa ter 3 letras ou mais, não pode ser {nome}")
+            print(f"Erro: a idade precisa estar entre 0 e 150, não pode ser {idade}")
+            print(f"Erro: o salário precisa ser positivo, não pode ser {salario}")
+            print(f'Erro: o sexo precisa ser "m" ou "f", não pode ser "{sexo}"')
             print(f'Erro: o estado civil precisa ser "s", "c", "v" ou "d", não pode ser "{estado_civil}"')
+            break
         else:
             print("Cadastro realizado com sucesso")
         break
