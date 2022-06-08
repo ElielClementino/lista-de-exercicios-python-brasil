@@ -46,3 +46,4 @@ def gerar_tabuada(n: int, de: int, ate: int):
             soma = n * de
             print(f"{n} X {de} = {soma}")
             de += 1
+
