@@ -39,16 +39,18 @@ divisível somente por ele mesmo e por 1.
 
 def eh_primo(n: int) -> bool:
     """Escreva aqui em baixo a sua solução"""
-    divi = [2,3,5,7]
-    if n == 1 or n == 0:
-        print(False)
+    import math
+    possiveis_divisores = math.ceil(n / 2)
+    denominador = 1
+    divisores = 0
+    if n == 0 or n == 1:
+        print("False")
     else:
-        while True:
-            if n % divi[0] == 0 or n % divi[1] == 0 or n % divi[2] or n % divi[3]:
-                print(False)
-                break
-            else:
-                if n % n == 0 and n % 1 == 0:
-                    print(True)
-                break
-
+        while denominador <= possiveis_divisores:
+            if n % denominador == 0:
+                divisores += 1
+            denominador += 1
+        if divisores > 1:
+            print("False")
+        else:
+            print("True")
