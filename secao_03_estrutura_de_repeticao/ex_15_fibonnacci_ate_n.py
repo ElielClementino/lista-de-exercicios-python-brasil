@@ -33,8 +33,7 @@ def calcular_serie_de_fibonacci(n: int) -> str:
         while i < n - 2:
             fibonnaci += [fibonnaci[i] + fibonnaci[i + 1]]
             i += 1
-        else:
-            print("'", end="")
-            print(*fibonnaci, sep=', ', end='')
-            print("'", end='')
+        print("'", end="")
+        print(*fibonnaci, sep=', ', end='')
+        print("'", end='')
     # o * serve para remover as formatações padrões da lista []

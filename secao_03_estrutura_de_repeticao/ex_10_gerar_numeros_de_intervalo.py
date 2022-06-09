@@ -23,3 +23,4 @@ def calcular_numeros_no_intervalo(inicio: int, fim: int) -> str:
             print(i, end=', ')
         print(i + 1, end='')
     print("'")
+# print("'" + ', '.join([str(i) for i in range(inicio, fim)]) + "'")

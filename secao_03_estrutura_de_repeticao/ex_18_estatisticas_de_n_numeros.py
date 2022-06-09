@@ -25,14 +25,7 @@ def calcular_estatisticas(*numeros) -> str:
         if numeros == ():
             print("'Maior valor: não existe. Menor valor: não existe. Soma: 0'")
             break
-        elif len(numeros) == 1:
-            print(f"'Maior valor: {max(numeros)}. Menor valor: 1. Soma: {min(numeros)}'")
-            break
-        elif len(numeros) == 2:
-            soma = numeros[0] + numeros[1]
-            print(f"'Maior valor: {max(numeros)}. Menor valor: {min(numeros)}. Soma: {soma}'")
-            break
-        elif len(numeros) == 3:
-            soma = numeros[0] + numeros[1] + numeros[2]
+        elif len(numeros) > 0:
+            soma = sum(numeros)
             print(f"'Maior valor: {max(numeros)}. Menor valor: {min(numeros)}. Soma: {soma}'")
             break

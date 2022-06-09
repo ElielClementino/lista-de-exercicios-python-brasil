@@ -49,3 +49,6 @@ Gabarito da Prova:
 
 def corrigir(*provas):
     """Escreva aqui em baixo a sua solução"""
+    a, *b = provas[0]
+    print(a)
+    print(b)

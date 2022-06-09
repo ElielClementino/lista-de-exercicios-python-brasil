@@ -56,24 +56,17 @@ para registrar a próxima compra.
 
 def rodar_programa_de_caixa():
     """Escreva aqui em baixo a sua solução"""
-    valor_mercadoria = 0
-    dinheiro_pago = 0
-    troco = 0
+    valor_total = 0
     while True:
-        choice = int(input("Digite 2 para continuar a executar o programa, -1 para finalizar a compra, e 0 para fechara a atual e iniciar outra: "))
-        if choice == -1:
+        entrada_de_valor = float(input("Insira um valor: "))
+        if entrada_de_valor == 0 or entrada_de_valor == -1:
             print("Lojas Tabajara")
-            print("-------------------")
-            print("Programa encerrado!")
-            break
-        elif choice == 2 or choice == 0:
-            valor_mercadoria = float(input("Digite o valor da mercadoria comprada"))
-            dinheiro_pago = int(input("Dinheiro dado pelo cliente: "))
-            troco = dinheiro_pago - valor_mercadoria
-            print("Lojas Tabajaras")
-            print(f"Total     : R$   {valor_mercadoria}")
-            print(f"Dinheiro  : R$   {dinheiro_pago}")
-            print(f"Troco     : R$   {troco}")
-            print("-------------------")
-            break
-
+            if valor_total != 0:
+                valor_total_str = f'{valor_total:.2f}'
+                dinheiro_str = input("Insira o valor em dinheiro que o cliente ofereceu: ")
+                dinheiro_int = float(dinheiro_str)
+                troco = dinheiro_int - float(valor_total)
+                troco_str = f'{troco:.2f}'
+                print(f"Total     : R${valor_total_str.rjust(7)}")
+                print(f"Dinheiro  : R${dinheiro_str.rjust(7)}")
+                print(f"Troco     : R${troco_str.rjust(7)}")
