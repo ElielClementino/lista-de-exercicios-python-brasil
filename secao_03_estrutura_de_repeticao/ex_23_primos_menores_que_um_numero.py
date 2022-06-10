@@ -47,7 +47,7 @@ def calcular_primos_e_divisoes(n: int) -> Tuple[str, int]:
     divisoes = 0
 
     for cont in range(n + 1):
-        if 1 == cont % 2 != 2:
+        if cont % 2 == 1 and cont != 2:
             numeros.append(cont)
             divisoes += 1
         else:
