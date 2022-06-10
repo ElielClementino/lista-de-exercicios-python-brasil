@@ -54,18 +54,14 @@ def eh_primo(n: int) -> bool:
     possiveis_divisores = math.ceil(n / 2)
     denominador = 1
     divisores = 0
-    resto_par = [2,4]
-    cont = 0
     if n == 0 or n == 1:
         print("False")
-
     else:
         while denominador <= possiveis_divisores:
-            if n % resto_par[0] == 0 or n % resto_par[1] == 0:
-                print(f"É divisivel por {resto_par[cont]}")
-                cont += 1
             if n % denominador == 0:
                 divisores += 1
+                if denominador != 1:
+                    print(f"É divisível por {denominador}")
             denominador += 1
         if divisores > 1:
             print("False")

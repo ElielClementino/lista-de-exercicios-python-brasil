@@ -49,6 +49,24 @@ Gabarito da Prova:
 
 def corrigir(*provas):
     """Escreva aqui em baixo a sua solução"""
-    a, *b = provas[0]
-    print(a)
-    print(b)
+    # a, *b = provas[0]
+    aluno_1 = provas[0]
+    gabarito = ['A', 'B', 'C', 'D', 'E', 'E', 'D', 'C', 'B', 'A']
+    acertos = 0
+    erros = 0
+    if len(provas) >= 1:
+        for cont in range(0, 10):
+            if aluno_1[cont] == gabarito[cont]:
+                acertos += 1
+            elif aluno_1[cont] != gabarito[cont]:
+                erros += 1
+    print(acertos,erros)
+    if len(provas) > 2:
+        aluno_2 = provas[1]
+        print(aluno_2)
+        print("pin")
+
+
+
+
+

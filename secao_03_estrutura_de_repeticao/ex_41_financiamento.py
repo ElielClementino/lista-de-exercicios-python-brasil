@@ -32,3 +32,28 @@ Quantidade de Parcelas  % de Juros sobre o valor inicial da dívida
 
 def gerar_dados_de_financiamente(valor_inicial: float):
     """Escreva aqui em baixo a sua solução"""
+    print("Valor da Dívida Valor dos Juros Quantidade de Parcelas  Valor da Parcela")
+    juros = 0
+    parcelas = 1
+    casa = 0.0
+    for cont in range(0, 5):
+        print(f"R$ {valor_inicial:.2f}      {juros:0f}%              {parcelas}                       R$   1500.00")
+        if cont == 1:
+            parcelas += 2
+        elif cont == 2:
+            parcelas += 5
+        elif cont == 3:
+            parcelas += 8
+        elif cont == 4:
+            parcelas += 11
+        juros += casa + 0.05
+        print(juros)
+        if parcelas == 3:
+            juros = 0.10 * 100
+        elif parcelas == 6:
+            juros = 0.15 * 100
+        elif parcelas == 9:
+            juros = 0.20 * 100
+        elif parcelas == 12:
+            juros = 0.25 * 100
+        valor_inicial = valor_inicial * juros
