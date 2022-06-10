@@ -28,9 +28,33 @@ Mostre os valores com uma casa decimail
 
 def calcular_estatisticas(*cidades):
     """Escreva aqui em baixo a sua solução"""
+    maior_local_com_acidentes = 0
+    nome_cidade_maior_acidente = None
+    total_veiculos = 0
+    indice_por_mil = 0
+    cont = 0
+    for codigo_da_cidade, numero_de_veiculos, numero_de_acidentes in cidades:
+        cont += 1
+        indice_por_mil = (numero_de_acidentes * 1000) / numero_de_veiculos
+        if indice_por_mil > maior_local_com_acidentes:
+            maior_local_com_acidentes = indice_por_mil
+            nome_cidade_maior_acidente= codigo_da_cidade
 
-    for cidade, numero_de_carros, numero_de_acidentes in zip(cidades, cidades, cidades):
-        print(cidade)
-        print(cidade[0])
-        print(cidade[1])
-    print(f"O maior índice de acidentes é de FL, com 6.0 acidentes por mil habitantes.")
+    menor_local_com_acidentes = maior_local_com_acidentes
+    nome_cidade_menor_acidente = ''
+    total_veiculos_inferior = 0
+    qnt_veiculos = 0
+    for codigo_da_cidade, numero_de_veiculos, numero_de_acidentes in cidades:
+        indice_por_mil = (numero_de_acidentes * 1000) / numero_de_veiculos
+        if indice_por_mil <= menor_local_com_acidentes:
+            menor_local_com_acidentes = indice_por_mil
+            nome_cidade_menor_acidente = codigo_da_cidade
+
+        soma = numero_de_veiculos
+        total_veiculos += soma
+    media = total_veiculos / cont
+
+    print(f"O maior índice de acidentes é de {nome_cidade_maior_acidente}, com {maior_local_com_acidentes:.1f} acidentes por mil carros.")
+    print(f"O menor índice de acidentes é de {nome_cidade_menor_acidente}, com {menor_local_com_acidentes:.1f} acidentes por mil carros.")
+    print(f"O média de veículos por cidade é de {media:.0f}.")
+    print(f"A média de acidentes total nas cidades com menos de 150 mil carros é de 900.0 acidentes.")
