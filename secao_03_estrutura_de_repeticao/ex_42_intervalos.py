@@ -40,27 +40,27 @@ A entrada de dados deverá terminar quando for lido um número negativo.
 
 def listar_numeros_para_avaliacao():
     """Escreva aqui em baixo a sua solução"""
-    intervalo_25 = 0
-    intervalo_50 = 0
-    intervalo_75 = 0
-    intervalo_100 = 0
+    intervalo_1 = 0
+    intervalo_2 = 0
+    intervalo_3 = 0
+    intervalo_4 = 0
     while True:
-        valor_digitado = int(input("Digite um número: "))
-        if valor_digitado < 0:
+        numero = input("Digite um número: ")
+        if numero < 0:
             break
-        if 0 >= valor_digitado <= 25:
-            intervalo_25 += 1
-        if 26 <= valor_digitado <= 50:
-            intervalo_50 += 1
-        if 51 <= valor_digitado <= 75:
-            intervalo_75 += 1
-        if 76 <= valor_digitado <= 100:
-            intervalo_100 += 1
-    if intervalo_25 >= 1:
-        print(f"{intervalo_25} número(s) entre o intervalo de zero a 25")
-    if intervalo_50 >= 1:
-        print(f"{intervalo_50} número(s) entre o intervalo de 26 a 50")
-    if intervalo_75 >= 1:
-        print(f"{intervalo_75} número(s) entre o intervalo de 51 a 75")
-    if intervalo_100 >= 1:
-        print(f"{intervalo_100} número(s) entre o intervalo de 76 a 100")
+        if numero >= 0 and numero <= 25:
+            intervalo_1 += 1
+        if numero >= 26 and numero <= 50:
+            intervalo_2 += 1
+        if numero >= 51 and numero <= 75:
+            intervalo_3 += 1
+        if numero >= 76 and numero <= 100:
+            intervalo_4 += 1
+    if intervalo_1 != 0:
+        print(f"{intervalo_1} número(s) entre o intervalo de zero a 25")
+    if intervalo_2 != 0:
+        print(f"{intervalo_2} número(s) entre o intervalo de 26 a 50")
+    if intervalo_3 != 0:
+        print(f"{intervalo_3} número(s) entre o intervalo de 51 a 75")
+    if intervalo_4 != 0:
+        print(f"{intervalo_4} número(s) entre o intervalo de 76 a 100")
