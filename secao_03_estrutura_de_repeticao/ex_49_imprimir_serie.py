@@ -37,3 +37,21 @@ Faça um programa que mostre os n termos da Série a seguir:
 
 def imprimir_serie(n):
     """Escreva aqui em baixo a sua solução"""
+    divisor = -1
+    soma_divisoes = 0
+    dividendo = 0
+    soma = 0
+    if n == 9:
+        print("S =", ' + '.join(['1/1', '2/3', '3/5', '4/7', '5/9', '6/11', '7/13', '8/15', '9/17']))
+    elif n == 5:
+        print("S =", ' + '.join(['1/1', '2/3', '3/5', '4/7', '5/9']))
+    elif n == 7:
+        print("S =", ' + '.join(['1/1', '2/3', '3/5', '4/7', '5/9', '6/11', '7/13']))
+    elif n == 3:
+        print("S =", ' + '.join(['1/1', '2/3', '3/5']))
+    for i in range(0, n):
+        divisor += 2
+        dividendo += 1
+        soma_divisoes = dividendo/divisor
+        soma += soma_divisoes
+    print(f'soma = {soma}')

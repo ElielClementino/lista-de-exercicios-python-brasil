@@ -48,3 +48,16 @@ Mostre os valores com uma casa decimal sem arredondar.
 
 def calcular_estatiscas_do_salto(nome, *saltos):
     """Escreva aqui em baixo a sua solução"""
+    from statistics import mean
+    media_demais = mean(sorted(saltos)[1:-2])
+    print(f"Atleta: {nome}")
+    print("---------------------------------")
+    for label, salto in zip(['Primeiro', 'Segundo', 'Terceiro', 'Quarto', 'Quinto'], saltos):
+        print(f"{label} Salto: {salto} m")
+    print("---------------------------------")
+    print(f"Melhor salto:  {max(saltos)} m")
+    print(f"Pior salto: {min(saltos)} m")
+    print(f"Média dos demais saltos: {media_demais:.1f} m")
+    print("---------------------------------")
+    print("Resultado final:")
+    print(f"{nome}: {media_demais:.1f} m")
