@@ -56,8 +56,7 @@ def calcular_primos_e_divisoes(n: int) -> Tuple[str, int]:
             if cont == 2:
                 primos.append(i)
                 divi += 1
-    primos = str(primos)
     primos = primos[1:-1]
     divisoes = divi
-    return primos, divisoes
+    return str(primos), divisoes
 
