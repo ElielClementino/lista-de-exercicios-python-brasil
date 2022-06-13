@@ -154,17 +154,17 @@ def fechar_conta(*itens):
     qnt_total = qnt_cachorro + qnt_bauru_simples + qnt_bauru_com_ovo + qnt_hamburger + qnt_cheeseburger + qnt_refrigerante
     valor_final = valor_cachorro + valor_bauru_simples + valor_bauru_com_ovo + valor_hamburger + valor_cheeseburger + valor_refrigerante
 
-    if qnt_cachorro > 0:
+    if qnt_cachorro >= 1:
         print(f'| Cachorro Quente  | 100    | 1.20                |          {qnt_cachorro} |       {valor_cachorro:.2f} |')
-    if qnt_bauru_simples > 0:
+    if qnt_bauru_simples >= 1:
         print(f'| Bauru Simples    | 101    | 1.30                |          {qnt_bauru_simples} |       {valor_bauru_simples:.2f} |')
-    if qnt_bauru_com_ovo > 0:
+    if qnt_bauru_com_ovo >= 1:
         print(f'| Bauru com Ovo    | 102    | 1.50                |          {qnt_bauru_com_ovo} |       {valor_bauru_com_ovo:.2f} |')
-    if qnt_hamburger > 0:
+    if qnt_hamburger >= 1:
         print(f'| Hamburger        | 103    | 1.20                |          {qnt_hamburger} |       {valor_hamburger:.2f} |')
-    if qnt_cheeseburger > 0:
+    if qnt_cheeseburger >= 1:
         print(f'| Cheeseburger     | 104    | 1.30                |          {qnt_cheeseburger} |       {valor_cheeseburger:.2f} |')
-    if qnt_refrigerante > 0:
+    if qnt_refrigerante >= 1:
         print(f'| Refrigerante     | 105    | 1.00                |          {qnt_refrigerante} |       {valor_refrigerante:.2f} |')
     print('|---------------------------------------------------------------------------|')
     print(f'| Total Geral:                                    |{qnt_total:>11} |{valor_final:>11.2f} |')
