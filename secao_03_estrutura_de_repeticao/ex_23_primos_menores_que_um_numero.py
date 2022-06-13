@@ -45,7 +45,7 @@ def calcular_primos_e_divisoes(n: int) -> Tuple[str, int]:
     """Escreva aqui em baixo a sua solução"""
     divi = 0
     numeros = list(range(3, n + 1))
-    primos = []
+    primos = ['']
     if n > 1:
         primos.append(2)
         for i in numeros:
