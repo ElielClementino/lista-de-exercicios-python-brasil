@@ -43,20 +43,21 @@ from typing import Tuple
 
 def calcular_primos_e_divisoes(n: int) -> Tuple[str, int]:
     """Escreva aqui em baixo a sua solução"""
-    import math
-    possiveis_divisores = math.ceil(n / 2)
-    denominador = 1
-    divisores = 0
-    if n == 0 or n == 1:
-        print("False")
-    else:
-        while denominador <= possiveis_divisores:
-            if n % denominador == 0:
-                divisores += 1
-                if denominador != 1:
-                    print(f"É divisível por {denominador}")
-            denominador += 1
-        if divisores > 1:
-            print("False")
-        else:
-            print("True")
+    divi = 0
+    numeros = list(range(3, n + 1))
+    primos = []
+    if n > 1:
+        primos.append(2)
+        for i in numeros:
+            cont = 0
+            for valor in range(1, i + 1):
+                if i % valor == 0:
+                    cont += 1
+            if cont == 2:
+                primos.append(i)
+                divi += 1
+    primos = str(primos)
+    primos = primos[1:-1]
+    divisoes = divi
+    return primos, divisoes
+
