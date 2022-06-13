@@ -151,6 +151,9 @@ def fechar_conta(*itens):
     valor_cheeseburger *= qnt_cheeseburger
     valor_refrigerante *= qnt_refrigerante
 
+    qnt_total = qnt_cachorro + qnt_bauru_simples + qnt_bauru_com_ovo + qnt_hamburger + qnt_cheeseburger + qnt_refrigerante
+    valor_final = valor_cachorro + valor_bauru_simples + valor_bauru_com_ovo + valor_hamburger + valor_cheeseburger + valor_refrigerante
+
     if qnt_cachorro > 0:
         print(f'| Cachorro Quente  | 100    | 1.20                |          {qnt_cachorro} |       {valor_cachorro:.2f} |')
     if qnt_bauru_simples > 0:
@@ -163,8 +166,6 @@ def fechar_conta(*itens):
         print(f'| Cheeseburger     | 104    | 1.30                |          {qnt_cheeseburger} |       {valor_cheeseburger:.2f} |')
     if qnt_refrigerante > 0:
         print(f'| Refrigerante     | 105    | 1.00                |          {qnt_refrigerante} |       {valor_refrigerante:.2f} |')
-    qnt_total = qnt_cachorro + qnt_bauru_simples + qnt_bauru_com_ovo + qnt_hamburger + qnt_cheeseburger + qnt_refrigerante
-    valor_final = valor_cachorro + valor_bauru_simples + valor_bauru_com_ovo + valor_hamburger + valor_cheeseburger + valor_refrigerante
     print('|---------------------------------------------------------------------------|')
     print(f'| Total Geral:                                    |{qnt_total:>11} |{valor_final:>11.2f} |')
     print('-----------------------------------------------------------------------------')
