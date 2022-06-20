@@ -38,4 +38,4 @@ def soma_serie(n):
         dividendo = 1
         soma_divisoes = dividendo / divisor
         soma += soma_divisoes
-    print(f'H = {soma}')
+    print(f"H = {soma}")
