@@ -90,3 +90,43 @@ from collections import Counter
 
 def apurar_votos(*votos):
     """Escreva aqui em baixo a sua solução"""
+    bolsonaro = 0
+    lula = 0
+    dilma = 0
+    fhc = 0
+    nulos = 0
+    brancos = 0
+    media_bolsonaro = 0
+    media_lula = 0
+    media_dilma = 0
+    media_fhc = 0
+    media_nulos = 0
+    media_brancos = 0
+    for numero in votos:
+        if numero == '1':
+            bolsonaro += 1
+            media_bolsonaro = (bolsonaro / len(votos)) * 100
+        elif numero == '2':
+            lula += 1
+            media_lula = (lula / len(votos)) * 100
+        elif numero == '3':
+            dilma += 1
+            media_dilma = (dilma / len(votos)) * 100
+        elif numero == '4':
+            fhc += 1
+            media_fhc = (fhc / len(votos)) * 100
+        elif numero == '5':
+            nulos += 1
+            media_nulos = (nulos / len(votos)) * 100
+        elif numero == '6':
+            brancos += 1
+            media_brancos = (brancos / len(votos)) * 100
+
+    print("Código do Candidato Nome do Candidato Votos Porcentagem sobre total")
+    print(f"1                   Bostonaro         {bolsonaro}{media_bolsonaro:>10.1f}%")
+    print(f"2                   Luladrão          {lula}{media_lula:>10.1f}%")
+    print(f"3                   Dilmanta          {dilma}{media_dilma:>10.1f}%")
+    print(f"4                   FHC Isentão       {fhc}{media_fhc:>10.1f}%")
+    print("-------------------------------------------------------------------")
+    print(f"5                   Votos Nulos       {nulos}{media_nulos:>10.1f}%")
+    print(f"6                   Votos Brancos     {brancos}{media_brancos:>10.1f}%")

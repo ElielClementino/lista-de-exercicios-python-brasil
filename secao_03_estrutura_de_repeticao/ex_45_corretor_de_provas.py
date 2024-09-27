@@ -49,3 +49,51 @@ Gabarito da Prova:
 
 def corrigir(*provas):
     """Escreva aqui em baixo a sua solução"""
+    gabarito = ['A', 'B', 'C', 'D', 'E', 'E', 'D', 'C', 'B', 'A']
+    a, *b = provas[0]
+    acertos_aluno_01 = 0
+    erros_aluno_01 = 0
+    acertos_aluno_02 = 0
+    erros_aluno_02 = 0
+    maior_nota = 0
+    menor_nota = 0
+    media = 0
+    for cont in range(0, len(b)):
+        if b[cont] == gabarito[cont]:
+            acertos_aluno_01 += 1
+        else:
+            erros_aluno_01 += 1
+    media = acertos_aluno_01 / len(provas)
+    if len(provas) == 1:
+        print("Aluno                 Nota")
+        print(f"{a}                 {acertos_aluno_01}")
+        print("---------------------------")
+        print(f"Média geral: {media:.1f}")
+        print(f"Maior nota: {acertos_aluno_01}")
+        print(f"Menor nota: {acertos_aluno_01}")
+        print(f"Total de Alunos: {len(provas)}")
+
+    if len(provas) >= 2:
+        c, *d = provas[1]
+        for cont in range(0, len(d)):
+            if d[cont] == gabarito[cont]:
+                acertos_aluno_02 += 1
+            else:
+                erros_aluno_02 += 1
+        if acertos_aluno_01 > acertos_aluno_02:
+            maior_nota = acertos_aluno_01
+            menor_nota = acertos_aluno_02
+        else:
+            maior_nota = acertos_aluno_02
+            menor_nota = acertos_aluno_01
+        media = (acertos_aluno_01 + acertos_aluno_02) / len(provas)
+        print("Aluno                 Nota")
+        print(f"{a}                 {acertos_aluno_01}")
+        print(f"{c}                 {acertos_aluno_02}")
+        print("---------------------------")
+        print(f"Média geral: {media:.1f}")
+        print(f"Maior nota: {maior_nota}")
+        print(f"Menor nota: {menor_nota}")
+        print(f"Total de Alunos: {len(provas)}")
+
+

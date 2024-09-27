@@ -47,3 +47,68 @@ Mostre o restultado com duas casas decimais
 
 def calcular_preco_da_carne(tipo_de_carne: str, kilos_de_carne: int, forma_de_pagamento: str) -> str:
     """Escreva aqui em baixo a sua solução"""
+    valor_file_ate_5kg = 4.90
+    valor_alcatra_ate_5kg = 5.90
+    valor_picanha_ate_5kg = 6.90
+
+    valor_file_mais_5kg = 5.80
+    valor_alcatra_mais_5kg = 6.80
+    valor_picanha_mais_5kg = 7.80
+    desconto = 0
+    # area do filé duplo
+    if tipo_de_carne == 'Filé Duplo' and kilos_de_carne <= 5 and forma_de_pagamento == 'cartão tabajara':
+        desconto = 0.05
+        valor_sem_desconto = kilos_de_carne * valor_file_ate_5kg
+        valor_com_desconto = valor_sem_desconto * desconto
+        valor_descontado = valor_sem_desconto - valor_com_desconto
+        print(f"'{kilos_de_carne} kg de Filé Duplo a R$ 4.90/kg saem a R$ {valor_sem_desconto:.2f}. Com desconto de 5% pelo pagamento feito com cartão tabajara, fica R$ {valor_descontado:.2f}'")
+    elif tipo_de_carne == 'Filé Duplo' and kilos_de_carne <= 5 and forma_de_pagamento != 'cartão tabajara':
+        valor_sem_desconto = kilos_de_carne * valor_file_ate_5kg
+        print(f"'{kilos_de_carne} kg de Filé Duplo a R$ 4.90/kg saem a R$ {valor_sem_desconto:.2f}. Não há desconto, pagamento feito com {forma_de_pagamento}'")
+    if tipo_de_carne == 'Filé Duplo' and kilos_de_carne > 5 and forma_de_pagamento == 'cartão tabajara':
+        desconto = 0.05
+        valor_sem_desconto = kilos_de_carne * valor_file_mais_5kg
+        valor_com_desconto = valor_sem_desconto * desconto
+        valor_descontado = valor_sem_desconto - valor_com_desconto
+        print(f"'{kilos_de_carne} kg de Filé Duplo a R$ 5.80/kg saem a R$ {valor_sem_desconto:.2f}. Com desconto de 5% pelo pagamento feito com cartão tabajara, fica R$ {valor_descontado:.2f}'")
+    elif tipo_de_carne == 'Filé Duplo' and kilos_de_carne > 5 and forma_de_pagamento != 'cartão tabajara':
+        valor_sem_desconto = kilos_de_carne * valor_file_mais_5kg
+        print(f"'{kilos_de_carne} kg de Filé Duplo a R$ 5.80/kg saem a R$ {valor_sem_desconto:.2f}. Não há desconto, pagamento feito com {forma_de_pagamento}'")
+    # area da alcatra
+    if tipo_de_carne == 'Alcatra' and kilos_de_carne <= 5 and forma_de_pagamento == 'cartão tabajara':
+        desconto = 0.05
+        valor_sem_desconto = kilos_de_carne * valor_alcatra_ate_5kg
+        valor_com_desconto = valor_sem_desconto * desconto
+        valor_descontado = valor_sem_desconto - valor_com_desconto
+        print(f"'{kilos_de_carne} kg de Alcatra a R$ 5.90/kg saem a R$ {valor_sem_desconto:.2f}. Com desconto de 5% pelo pagamento feito com cartão tabajara, fica R$ {valor_descontado:.2f}'")
+    elif tipo_de_carne == 'Alcatra' and kilos_de_carne <= 5 and forma_de_pagamento != 'cartão tabajara':
+        valor_sem_desconto = kilos_de_carne * valor_alcatra_ate_5kg
+        print(f"'{kilos_de_carne} kg de Alcatra a R$ 5.90/kg saem a R$ {valor_sem_desconto:.2f}. Não há desconto, pagamento feito com {forma_de_pagamento}'")
+    if tipo_de_carne == 'Alcatra' and kilos_de_carne > 5 and forma_de_pagamento == 'cartão tabajara':
+        desconto = 0.05
+        valor_sem_desconto = kilos_de_carne * valor_alcatra_mais_5kg
+        valor_com_desconto = valor_sem_desconto * desconto
+        valor_descontado = valor_sem_desconto - valor_com_desconto
+        print(f"'{kilos_de_carne} kg de Alcatra a R$ 6.80/kg saem a R$ {valor_sem_desconto:.2f}. Com desconto de 5% pelo pagamento feito com cartão tabajara, fica R$ {valor_descontado:.2f}'")
+    elif tipo_de_carne == 'Alcatra' and kilos_de_carne > 5 and forma_de_pagamento != 'cartão tabajara':
+        valor_sem_desconto = kilos_de_carne * valor_alcatra_mais_5kg
+        print(f"'{kilos_de_carne} kg de Alcatra a R$ 6.80/kg saem a R$ {valor_sem_desconto:.2f}. Não há desconto, pagamento feito com {forma_de_pagamento}'")
+# area da picanha
+    if tipo_de_carne == 'Picanha' and kilos_de_carne <= 5 and forma_de_pagamento == 'cartão tabajara':
+        desconto = 0.05
+        valor_sem_desconto = kilos_de_carne * valor_picanha_ate_5kg
+        valor_com_desconto = valor_sem_desconto * desconto
+        valor_descontado = valor_sem_desconto - valor_com_desconto
+        print(f"'{kilos_de_carne} kg de Picanha a R$ 6.90/kg saem a R$ {valor_sem_desconto:.2f}. Com desconto de 5% pelo pagamento feito com cartão tabajara, fica R$ {valor_descontado:.2f}'")
+    elif tipo_de_carne == 'Picanha' and kilos_de_carne <= 5 and forma_de_pagamento != 'cartão tabajara':
+        valor_sem_desconto = kilos_de_carne * valor_picanha_ate_5kg
+        print(f"'{kilos_de_carne} kg de Picanha a R$ 6.90/kg saem a R$ {valor_sem_desconto:.2f}. Não há desconto, pagamento feito com {forma_de_pagamento}'")
+    if tipo_de_carne == 'Picanha' and kilos_de_carne > 5 and forma_de_pagamento == 'cartão tabajara':
+        desconto = 0.05
+        valor_sem_desconto = kilos_de_carne * valor_picanha_mais_5kg
+        valor_com_desconto = valor_sem_desconto * desconto
+        valor_descontado = valor_sem_desconto - valor_com_desconto
+        print(f"'{kilos_de_carne} kg de Picanha a R$ 7.80/kg saem a R$ {valor_sem_desconto:.2f}. Com desconto de 5% pelo pagamento feito com cartão tabajara, fica R$ {valor_descontado:.2f}'")
+    elif tipo_de_carne == 'Picanha' and kilos_de_carne > 5 and forma_de_pagamento != 'cartão tabajara':
+        valor_sem_desconto = kilos_de_carne * valor_picanha_mais_5kg
+        print(f"'{kilos_de_carne} kg de Picanha a R$ 7.80/kg saem a R$ {valor_sem_desconto:.2f}. Não há desconto, pagamento feito com {forma_de_pagamento}'")

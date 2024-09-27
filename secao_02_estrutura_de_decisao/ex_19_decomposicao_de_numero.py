@@ -52,3 +52,49 @@ Observando os termos no plural a colocação do "e", da vírgula entre outros. E
 
 def decompor_numero(numero: int):
     """Escreva aqui em baixo a sua solução"""
+    validador_numero = numero
+    dezenas_str = centenas_str = unidades_str = ''
+    centenas_int, numero = divmod(numero, 100)
+
+    if centenas_int == 1:
+        centenas_str = f'{centenas_int} centena'
+    elif centenas_int > 1:
+        centenas_str = f'{centenas_int} centenas'
+
+    dezenas_int, numero = divmod(numero, 10)
+    if dezenas_int == 1:
+        dezenas_str = f'{dezenas_int} dezena'
+    elif dezenas_int > 1:
+        dezenas_str = f'{dezenas_int} dezenas'
+
+    if numero == 1:
+        unidades_str = f'{numero} unidade'
+    elif numero > 1:
+        unidades_str = f'{numero} unidades'
+    if validador_numero == 1000:
+        print("'O número precisa ser menor que 1000'")
+    elif validador_numero <= -1:
+        print("'O número precisa ser positivo'")
+    elif centenas_int > 1 and dezenas_int > 1 and numero > 1:
+        print(f"'{validador_numero} = {centenas_str}, {dezenas_str} e {unidades_str}'")
+
+    elif centenas_int >= 1 and dezenas_int == 0 and numero == 0:
+        print(f"'{validador_numero} = {centenas_str}'")
+
+    elif centenas_int > 1 and dezenas_int >= 1 and numero == 0:
+        print(f"'{validador_numero} = {centenas_str} e {dezenas_str}'")
+
+    elif centenas_int == 0 and dezenas_int == 0 and numero >= 1:
+        print(f"'{validador_numero} = {unidades_str}'")
+
+    elif centenas_int >= 1 and dezenas_int == 0 and numero >= 1:
+        print(f"'{validador_numero} = {centenas_str} e {unidades_str}'")
+
+    elif centenas_int == 0 and dezenas_int >= 1 and numero >= 1:
+        print(f"'{validador_numero} = {dezenas_str} e {unidades_str}'")
+
+    elif centenas_int == 0 and dezenas_int >= 1 and numero == 0:
+        print(f"'{validador_numero} = {dezenas_str}'")
+    else:
+        print(f"'{validador_numero} = {centenas_str}, {dezenas_str} e {unidades_str}'")
+
